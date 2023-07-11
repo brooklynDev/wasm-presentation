@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>WASM</title>
+
+	<link rel="stylesheet" href="reveal.js/reset.css">
+	<link rel="stylesheet" href="reveal.js/reveal.css">
+	<link rel="stylesheet" href="reveal.js/theme/moon.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>WASM</h2>
+				<h3>A technical deepdive</h3>
+				<h4>By Avrumi Friedman</h4>
+			</section>
+			<section>
+				<section>
+					<h2>Some points up front</h2>
+					<ul>
+						<li class="fragment fade-in">This talk will stay away from the sales pitch stuff</li>
+						<li class="fragment fade-in">Not that much practical advice</li>
+						<li class="fragment fade-in">It's really just about understanding what WASM is at a fundamental
+							level</li>
+						<li class="fragment fade-in">Will be fairly techical</li>
+						<li class="fragment fade-in">Will not talk about performance</li>
+						<li class="fragment fade-in">I'm by no means an expert!!</li>
+					</ul>
+				</section>
+				<section>
+					<img src="2964qgizrt651.png" />
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>What is Wasm?</h3>
+					<p class="fragment fade-in">The typical definition you'll find is the following: "WebAssembly,
+						shortened to Wasm,
+						is a binary instruction format for a stack-based virtual machine"</p>
+				</section>
+				<section>
+					<h2>DEMO TIME</h2>
+				</section>
+			</section>
+			<section>
+				<p>So, just like in our demo, WASM is the equivalent to our binary ".avr" file. (That's the first reason
+					why webASSEMBLY isn't a great name - it isn't assembly 🙃)</p>
+				<p class="fragment fade-in">A key point to remember is that just like in our demo there were no
+					instructions that were
+					able to access anything on the system, all it was able to do was manipulate the stack and some
+					memory,
+					this is also the case for WASM. It's entirely sandbox and can't access anything outside of its
+					own environment.
+				</p>
+			</section>
+			<section>
+				<section>
+					<h3>WAT</h3>
+					<p>WAT (yes, that's what it's called) is short for WebAssembly Text Format. While WASM is in fact
+						a binary format, there is a text format for WASM.
+					</p>
+				</section>
+				<section>
+					<h3>WABT</h3>
+					<p>(Aren't these names awesome?) WABT stands for WebAssembly Binary Toolkit. It's a suite of
+						tools used for working with WASM.
+					</p>
+					<a target="_blank"
+						href="https://github.com/WebAssembly/wabt">https://github.com/WebAssembly/wabt</a>
+				</section>
+				<section>
+					<h2>DEMO TIME</h2>
+				</section>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="reveal.js/reveal.js"></script>
+	<script src="reveal.js/plugin/notes/notes.js"></script>
+	<script src="reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
