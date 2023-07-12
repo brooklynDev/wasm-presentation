@@ -81,6 +81,27 @@
 					<h2>DEMO TIME</h2>
 				</section>
 			</section>
+			<section>
+				<h3>Exports and Imports</h3>
+				<p class="fragment fade-in"><strong>Exports:</strong>
+					A WASM module can export functions that the WASM host can then call. In our example, we saw how 
+					from within our JavaScript we were able to get access to the exported add function and
+					then call it from JS.
+				</p>
+				<p class="fragment fade-in"><strong>Imports:</strong>
+					This is the opposite. Imports are functions that can be defined by the host, and then imported into
+					WASM module. Said differently, this is a way for WASM to call back into JavaScript.
+				</p>
+			</section>
+			<section>
+				<p>For the upcoming demos, we'll be using C, however we'll be using a very raw approach. 
+					I'd like to stress that this is not how WASM applications
+					are typically built. There's a toolchain known as Emscripten that provides a lot more 
+					functionality, but in the interest of understanding the underlying machinery, we'll be
+					doing it as raw as possible.
+				</p>
+				<h2 class="fragment fade-in">DEMO TIME</h2>
+			</section>
 
 		</div>
 	</div>

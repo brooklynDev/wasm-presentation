@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WASM Balls</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap.css" />
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="num1" class="form-control form-control-lg" placeholder="Num 1" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="num2" class="form-control form-control-lg" placeholder="Num 2" />
+            </div>
+            <div class="col-md-4">
+                <button id="add" class="btn btn-primary btn-lg w-100">Add</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <button id="call-with-int" class="btn btn-success w-100 btn-lg">Call WASM int function</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <button id="call-with-string" class="btn btn-danger w-100 btn-lg">Call WASM string function</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script type='module' src="./index.js"></script>
+</body>
+
+</html>

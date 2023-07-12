@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WASM Balls</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <style>
+        canvas {
+            border: 2px solid #abb2bf;
+            background-color:#2C3E50;
+        }
+        body {
+            background-color: #18BC9C;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-5">
+    <h5 style="text-align: center;">Balls: <span id="ball_count">0</span></h5>
+    <h5 style="text-align: center;"><span id="fps_display">FPS: 0</span></h5>
+    <div class="container d-flex align-items-center justify-content-center">
+        <canvas width="1600" height="900" id="ball-canvas"></canvas>
+    </div>
+</div>
+
+
+<script type='module' src="./index.js"></script>
+</body>
+
+</html>
