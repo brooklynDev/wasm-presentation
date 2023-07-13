@@ -46,6 +46,8 @@
 					<p class="fragment fade-in">The typical definition you'll find is the following: "WebAssembly,
 						shortened to Wasm,
 						is a binary instruction format for a stack-based virtual machine"</p>
+
+					<p class="fragment fade-in">What on earth does that mean?</p>
 				</section>
 				<section>
 					<h2>DEMO TIME</h2>
@@ -56,9 +58,9 @@
 					why webASSEMBLY isn't a great name - it isn't assembly 🙃)</p>
 				<p class="fragment fade-in">A key point to remember is that just like in our demo there were no
 					instructions that were
-					able to access anything on the system, all it was able to do was manipulate the stack and some
-					memory.
-					This is also the case for WASM - it's entirely sandboxex and cannot access anything outside of its
+					able to access anything on the system (all it was able to do was manipulate the stack and some
+					memory), this is also the case for WASM - it's entirely sandboxex and cannot access anything outside
+					of its
 					own environment.
 				</p>
 			</section>
@@ -66,7 +68,7 @@
 				<section>
 					<h3>WAT</h3>
 					<p>WAT (yes, that's what it's called) is short for WebAssembly Text Format. While WASM is in fact
-						a binary format, there is a text format for WASM.
+						a binary format, there is also a text format for WASM.
 					</p>
 				</section>
 				<section>
@@ -84,7 +86,7 @@
 			<section>
 				<h3>Exports and Imports</h3>
 				<p class="fragment fade-in"><strong>Exports:</strong>
-					A WASM module can export functions that the WASM host can then call. In our example, we saw how 
+					A WASM module can export functions that the WASM host can then call. In our example, we saw how
 					from within our JavaScript we were able to get access to the exported add function and
 					then call it from JS.
 				</p>
@@ -94,15 +96,50 @@
 				</p>
 			</section>
 			<section>
-				<p>For the upcoming demos, we'll be using C, however we'll be using a very raw approach. 
+				<p>For the upcoming demos, we'll be using C, however we'll be using a very raw approach.
 					I'd like to stress that this is not how WASM applications
-					are typically built. There's a toolchain known as Emscripten that provides a lot more 
+					are typically built. There's a toolchain known as Emscripten that provides a lot more
 					functionality, but in the interest of understanding the underlying machinery, we'll be
 					doing it as raw as possible.
 				</p>
 				<h2 class="fragment fade-in">DEMO TIME</h2>
 			</section>
-
+			<section>
+				<h3>But who says WASM can only run in the browser?</h3>
+				<p class="fragment fade-in">
+					If WASM is just a binary format for a stack based VM, who says only the browser can
+					implement this VM? Could we possibly run WASM outside of the browser? 🤔
+				</p>
+				<p class="fragment fade-in">
+					Why yes, yes we can!
+				</p>
+				<h2 class="fragment fade-in">DEMO TIME</h2>
+			</section>
+			<section>
+				<section>
+					<h3>WASI</h3>
+					<p class="fragment fade-in">
+						So now that we can run WASM applications outside of the browser, imagine a world where
+						we can upload a WASM module to some remote host that can run our application (think Azure
+						Function
+						or AWS Lambda), how do we know what functions will be imported into our WASM code?
+					</p>
+					<p class="fragment fade-in">
+						For this we need some form of standardization. Enter WASI. WASI is essentially an "interface"
+						that describes a set of functions that will be available to us within our WASM application
+						when executed in a WASI compatible environment.
+					</p>
+				</section>
+				<section>
+					<h3>Wasmtime</h3>
+					<p class="fragment fade-in">
+						Wasmtime is a fast and secure runtime for WASM by the Bytecode Alliance. Using Wasmtime
+						we can run WASM modules directly from our console, and additionally, it'll provide all
+						WASI functions to our WASM application.
+					</p>
+					<h2 class="fragment fade-in">DEMO TIME</h2>
+				</section>
+			</section>
 		</div>
 	</div>
 
