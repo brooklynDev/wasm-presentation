@@ -24,32 +24,32 @@ typedef struct
 {
     int stack[MAX_STACK_SIZE];
     int memory[MAX_MEMORY_SIZE];
-    int sp;
+    int stack_pointer;
 } VM;
 
 VM *newVM()
 {
     VM *vm = malloc(sizeof(VM));
-    vm->sp = 0;
+    vm->stack_pointer = 0;
     return vm;
 }
 
 void push(VM *vm, int value)
 {
-    if (vm->sp == MAX_STACK_SIZE)
+    if (vm->stack_pointer == MAX_STACK_SIZE)
     {
         return;
     }
-    vm->stack[vm->sp++] = value;
+    vm->stack[vm->stack_pointer++] = value;
 }
 
 int pop(VM *vm)
 {
-    if (vm->sp == 0)
+    if (vm->stack_pointer == 0)
     {
         return 0;
     }
-    return vm->stack[--vm->sp];
+    return vm->stack[--vm->stack_pointer];
 }
 
 void add(VM *vm)
@@ -86,7 +86,7 @@ void execute(VM *vm, Instruction *program, int program_size)
             mul(vm);
             break;
         case STORE:
-            if (vm->sp == 0 || program[i].value >= MAX_MEMORY_SIZE)
+            if (vm->stack_pointer == 0 || program[i].value >= MAX_MEMORY_SIZE)
             {
                 return;
             }
@@ -104,7 +104,7 @@ void execute(VM *vm, Instruction *program, int program_size)
 }
 void print_top_of_stack(VM *vm)
 {
-    printf("%d", vm->stack[vm->sp - 1]);
+    printf("%d", vm->stack[vm->stack_pointer - 1]);
 }
 
 int main()
