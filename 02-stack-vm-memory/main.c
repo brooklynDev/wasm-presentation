@@ -111,13 +111,14 @@ int main()
 {
     VM *vm = newVM();
 
+    //(10 + 20) * (3 + 4)
     Instruction program[] = {
-        {PUSH, 5},
-        {PUSH, 4},
+        {PUSH, 10},
+        {PUSH, 20},
         {ADD},
         {STORE, 0},
-        {PUSH, 8},
-        {PUSH, 2},
+        {PUSH, 3},
+        {PUSH, 4},
         {ADD},
         {LOAD, 0},
         {MUL}};
