@@ -6,7 +6,7 @@ typedef struct __wasi_ciovec_t
     long buf_len;
 } __wasi_ciovec_t;
 
-__attribute__((import_module("wasi_unstable"), import_name("fd_write"))) 
+__attribute__((import_module("wasi_snapshot_preview1"), import_name("fd_write"))) 
 extern char __wasi_fd_write(long fd, const __wasi_ciovec_t *iovs,long iovs_len,long *nwritten);
 
 __wasi_ciovec_t iov = {
