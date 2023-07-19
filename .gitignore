@@ -1,3 +1,5 @@
 main
 *.avr
 **/main.wasm
+**/.DS_Store
+
